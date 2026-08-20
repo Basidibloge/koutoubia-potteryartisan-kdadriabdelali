@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فخار الكتبية | المعلم عبد العالي القدادري</title>
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts للخطوط -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #964B00;
+            --primary-dark: #6e3500;
+            --accent: #D4AF37;
+            --bg-light: #FAF7F2;
+            --surface: #FFFFFF;
+            --text-main: #2C2523;
+            --text-muted: #665C54;
+            --whatsapp-color: #25D366;
+            --border-radius: 16px;
+            --shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        /* الهيدر العلوي */
+        header {
+            background: var(--surface);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        /* اللوجو كبير وواضح */
+        .logo-img {
+            width: 75px;
+            height: 75px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* أزرار اللغة: شريط أفقي مدمج، مستطيلة وصغيرة */
+        .lang-switcher {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+            background: #f0eae1;
+            padding: 4px 6px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .lang-switcher button {
+            background: transparent;
+            border: none;
+            color: var(--primary-dark);
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.78rem;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .lang-switcher button.active, .lang-switcher button:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* بطاقة المعلم السينمائية */
+        .artisan-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--surface);
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 3.5rem;
+            border-top: 6px solid var(--primary);
+        }
+
+        .cinema-ticket-card {
+            width: 100%;
+            max-width: 420px;
+            background: #1a1615;
+            border-radius: 20px;
+            padding: 14px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), 0 0 0 2px var(--accent);
+            margin-bottom: 2.2rem;
+            overflow: hidden;
+        }
+
+        .cinema-ticket-card::before,
+        .cinema-ticket-card::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--surface);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+        }
+
+        .cinema-ticket-card::before {
+            right: -12px;
+        }
+
+        .cinema-ticket-card::after {
+            left: -12px;
+        }
+
+        .cinema-ticket-inner {
+            border: 1.5px dashed rgba(212, 175, 55, 0.6);
+            border-radius: 14px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cinema-ticket-img {
+            width: 100%;
+            height: auto;
+            max-height: 580px;
+            object-fit: contain;
+            display: block;
+            background: #0d0c0b;
+        }
+
+        .cinema-ticket-badge {
+            background: linear-gradient(135deg, #D4AF37, #964B00);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 6px 18px;
+            width: 100%;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .artisan-profile h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .artisan-profile h3 {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: 1.3rem;
+            font-weight: 700;
+        }
+
+        .artisan-profile p {
+            max-width: 850px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        .video-section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 750px;
+            margin: 1.5rem auto 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            display: block;
+        }
+
+        .video-container video.no-sound::-webkit-media-controls-mute-button,
+        .video-container video.no-sound::-webkit-media-controls-volume-slider {
+            display: none !important;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3.5px;
+            background: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .gallery-card {
+            background: var(--surface);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+        }
+
+        .gallery-card .img-box {
+            height: 250px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .gallery-card .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            background: #1a1a1a;
+        }
+
+        .gallery-card .card-info {
+            padding: 1.2rem 1rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gallery-card .card-info h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .gallery-card .card-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 3.5rem;
+        }
+
+        .contact-cta h2 {
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+
+        .contact-cta p {
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            color: #128C7E;
+            font-weight: 800;
+            padding: 14px 32px;
+            border-radius: 35px;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            font-size: 1.15rem;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            background: #fdfdfd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: var(--surface);
+            border-top: 1px solid #eaeaea;
+        }
+
+        [dir="ltr"] body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-box">
+            <img src="https://h.top4top.io/p_3883o606p1.jpeg" alt="شعار فخار الكتبية" class="logo-img">
+            <span class="logo-text" id="txt-logo">فخار الكتبية</span>
+        </div>
+        <div class="lang-switcher">
+            <button class="active" onclick="switchLanguage('ar')">العربية</button>
+            <button onclick="switchLanguage('fr')">Français</button>
+            <button onclick="switchLanguage('en')">English</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- قسم المعلم بالتذكرة السينمائية والصورة الكاملة -->
+        <section class="artisan-profile">
+            <div class="cinema-ticket-card">
+                <div class="cinema-ticket-inner">
+                    <img src="https://i.top4top.io/p_388328y7o2.jpeg" alt="المعلم عبد العالي القدادري" class="cinema-ticket-img" id="artisan-img">
+                    <div class="cinema-ticket-badge">
+                        <span>★ فخار الكتبية ★</span>
+                        <span>صناعة تقليدية أصيلة</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 id="txt-name">المعلم عبد العالي القدادري</h1>
+            <h3 id="txt-subtitle">فخار الكتبية | حامل سر الصنعة وسليل عائلة القدادري بفخار سلا العريق</h3>
+            <p id="txt-bio">
+                يُعد المعلم عبد العالي القدادري واحداً من أبرز رواد صناعة الفخار والخزف التقليدي الأصيل. تشرب أسرار هذه الحرفة العريقة منذ نعومة أظافره متتلمذاً على يد إخوته "القدادري" المشهود لهم بالريادة والبراعة في مدينة سلا التاريخية. بلمسات يديه المبدعتين، يطوّع الطين المغربي ليحوله إلى مجسمات معمارية، شلالات مائية منزلية، وتحف فنية فريدة تجمع بين روح التراث المغربي الأصيل والدقة المتناهية.
+            </p>
+        </section>
+
+        <!-- قسم الفيديو الأول (صامت وبدون زر صوت) -->
+        <section class="video-section">
+            <h2 class="section-title" id="txt-video-title">عرض فيديو لصناعة وإبداعات الفخار</h2>
+            <div class="video-container">
+                <video id="silent-video" class="no-sound" controls controlsList="nodownload nofullscreen novolume" muted poster="https://b.top4top.io/p_3883g7q952.png">
+                    <source src="https://a.top4top.io/m_3883pezsn8.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+        </section>
+
+        <!-- قسم المعرض والمنتجات -->
+        <section>
+            <h2 class="section-title" id="txt-gallery-title">معرض الإبداعات والتحف الفخارية</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://a.top4top.io/p_3883r6hhl1.png" alt="قصر فخاري مجسم">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p1-title">قصر معماري تراثي مجسم</h4>
+                        <p id="txt-p1-desc">مجسم هندسي دقيق مستوحى من العمارة المغربية والأبواب التاريخية.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://b.top4top.io/p_3883g7q952.png" alt="فانوس منزلي طيني">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p2-title">منزل وفانوس طيني مضيء</h4>
+                        <p id="txt-p2-desc">قطعة ديكورية فخارية مزينة بالنجوم تمنح إضاءة ساحرة ودافئة.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://c.top4top.io/p_3883mv5ip3.png" alt="بلغة فخارية تقليدية">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p3-title">بلغة مغربية فخارية مخرمة</h4>
+                        <p id="txt-p3-desc">تحفة تراثية منحوتة يدوياً تمثل رمز الزي والتقليد المغربي الأصيل.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://d.top4top.io/p_3883xmhat4.jpg" alt="لوحات فخارية بارزة">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p4-title">لوحات ومجسمات فخارية بارزة</h4>
+                        <p id="txt-p4-desc">أقراص طينية مزخرفة يدويًا بنقوش ثلاثية الأبعاد مناسبة للديكور والتعليق.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://e.top4top.io/p_3883hdqav5.png" alt="أواني طينية بتصميم القارب">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p5-title">أواني بتصميم القارب التقليدي</h4>
+                        <p id="txt-p5-desc">أوانٍ فخارية مميزة بخطوط زرقاء وأشكال مبتكرة للاستعمال والتزيين.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://f.top4top.io/p_38830ytq96.png" alt="شلال فخاري متدرج مائي">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p6-title">نافورة وشلال مائي فخاري متدرج</h4>
+                        <p id="txt-p6-desc">شلال فخاري مائي متقن يحاكي القلاع والواحات الطبيعية بتناسق ألوان بديع.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://l.top4top.io/p_3883pbomb7.png" alt="نافورة جدارية فخارية">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p7-title">نافورة جدارية فخارية مدمجة</h4>
+                        <p id="txt-p7-desc">شلال مائي عمودي أنيق مصمم للجلسات الداخلية والحدائق المنزلية.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-box">
+                        <img src="https://b.top4top.io/p_3883t1k279.jpg" alt="مجسمات طينية خام">
+                    </div>
+                    <div class="card-info">
+                        <h4 id="txt-p8-title">مجسمات وأوانٍ من الطين الطبيعي</h4>
+                        <p id="txt-p8-desc">إبداعات طينية قبل مرحلة التلوين تبرز مهارة التشكيل اليدوي ونقاء الطين.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- قسم التواصل عبر واتساب برقم المعلم المباشر -->
+        <section class="contact-cta">
+            <h2 id="txt-contact-title">هل ترغب بطلب قطع مخصصة أو التواصل المباشر؟</h2>
+            <p id="txt-contact-desc">تواصل مع المعلم عبد العالي القدادري مباشرة للاستفسارات وطلبات الجملة والتفصيل.</p>
+            <a href="https://wa.me/212668436866?text=السلام%20عليكم%20المعلم%20عبد%20العالي،%20أود%20الاستفسار%20عن%20منتجات%20فخار%20الكتبية" target="_blank" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span id="txt-btn-whatsapp">تواصل عبر الواتساب</span>
+            </a>
+        </section>
+
+        <!-- قسم الفيديو الإضافي في آخر الموقع -->
+        <section class="video-section">
+            <h2 class="section-title" id="txt-bottom-video-title">فيديو من داخل ورشة فخار الكتبية</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="https://g.top4top.io/m_3883c55650.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p id="txt-footer">جميع الحقوق محفوظة © فخار الكتبية - المعلم عبد العالي القدادري</p>
+    </footer>
+
+    <script>
+        const silentVid = document.getElementById('silent-video');
+        if (silentVid) {
+            silentVid.muted = true;
+            silentVid.volume = 0;
+            silentVid.addEventListener('volumechange', () => {
+                silentVid.muted = true;
+                silentVid.volume = 0;
+            });
+        }
+
+        const translations = {
+            ar: {
+                dir: 'rtl',
+                logo: "فخار الكتبية",
+                name: "المعلم عبد العالي القدادري",
+                subtitle: "فخار الكتبية | حامل سر الصنعة وسليل عائلة القدادري بفخار سلا العريق",
+                bio: "يُعد المعلم عبد العالي القدادري واحداً من أبرز رواد صناعة الفخار والخزف التقليدي الأصيل. تشرب أسرار هذه الحرفة العريقة منذ نعومة أظافره متتلمذاً على يد إخوته 'القدادري' المشهود لهم بالريادة والبراعة في مدينة سلا التاريخية. بلمسات يديه المبدعتين، يطوّع الطين المغربي ليحوله إلى مجسمات معمارية، شلالات مائية منزلية، وتحف فنية فريدة تجمع بين روح التراث المغربي الأصيل والدقة المتناهية.",
+                videoTitle: "عرض فيديو لصناعة وإبداعات الفخار",
+                galleryTitle: "معرض الإبداعات والتحف الفخارية",
+                p1Title: "قصر معماري تراثي مجسم",
+                p1Desc: "مجسم هندسي دقيق مستوحى من العمارة المغربية والأبواب التاريخية.",
+                p2Title: "منزل وفانوس طيني مضيء",
+                p2Desc: "قطعة ديكورية فخارية مزينة بالنجوم تمنح إضاءة ساحرة ودافئة.",
+                p3Title: "بلغة مغربية فخارية مخرمة",
+                p3Desc: "تحفة تراثية منحوتة يدوياً تمثل رمز الزي والتقليد المغربي الأصيل.",
+                p4Title: "لوحات ومجسمات فخارية بارزة",
+                p4Desc: "أقراص طينية مزخرفة يدويًا بنقوش ثلاثية الأبعاد مناسبة للديكور والتعليق.",
+                p5Title: "أواني بتصميم القارب التقليدي",
+                p5Desc: "أوانٍ فخارية مميزة بخطوط زرقاء وأشكال مبتكرة للاستعمال والتزيين.",
+                p6Title: "نافورة وشلال مائي فخاري متدرج",
+                p6Desc: "شلال فخاري مائي متقن يحاكي القلاع والواحات الطبيعية بتناسق ألوان بديع.",
+                p7Title: "نافورة جدارية فخارية مدمجة",
+                p7Desc: "شلال مائي عمودي أنيق مصمم للجلسات الداخلية والحدائق المنزلية.",
+                p8Title: "مجسمات وأوانٍ من الطين الطبيعي",
+                p8Desc: "إبداعات طينية قبل مرحلة التلوين تبرز مهارة التشكيل اليدوي ونقاء الطين.",
+                contactTitle: "هل ترغب بطلب قطع مخصصة أو التواصل المباشر؟",
+                contactDesc: "تواصل مع المعلم عبد العالي القدادري مباشرة للاستفسارات وطلبات الجملة والتفصيل.",
+                btnWhatsapp: "تواصل عبر الواتساب",
+                bottomVideoTitle: "فيديو من داخل ورشة فخار الكتبية",
+                footer: "جميع الحقوق محفوظة © فخار الكتبية - المعلم عبد العالي القدادري"
+            },
+            fr: {
+                dir: 'ltr',
+                logo: "Poterie Al Koutoubia",
+                name: "Maâlem Abdelali El Kaddadri",
+                subtitle: "Poterie Al Koutoubia | Héritier de l'illustre famille El Kaddadri à Salé",
+                bio: "Maâlem Abdelali El Kaddadri est une figure emblématique de la poterie artisanale marocaine. Formé par ses frères 'El Kaddadri', maîtres potiers réputés de la cité historique de Salé, il façonne l'argile avec passion et précision pour donner vie à des maquettes architecturales, des fontaines d'eau artisanales et des objets décoratifs authentiques.",
+                videoTitle: "Vidéo Démonstrative des Créations en Poterie",
+                galleryTitle: "Galerie des Créations Artisanales",
+                p1Title: "Palais Architectural Traditionnel",
+                p1Desc: "Sculpture en argile détaillée inspirée des remparts et portes historiques marocaines.",
+                p2Title: "Maisonnette Lanterne Lumineuse",
+                p2Desc: "Pièce décorative ajourée en étoiles créant une ambiance lumineuse chaleureuse.",
+                p3Title: "Babouche Traditionnelle en Terre Cuite",
+                p3Desc: "Objet d'art gravé à la main, symbole du patrimoine vestimentaire marocain.",
+                p4Title: "Médaillons et Reliefs Décoratifs",
+                p4Desc: "Plaques en terre cuite avec motifs en relief pour décoration murale.",
+                p5Title: "Cendriers & Récipients Forme Barque",
+                p5Desc: "Céramiques artistiques ornées de bleu pour une touche originale.",
+                p6Title: "Fontaine Cascade Artisanale",
+                p6Desc: "Cascade d'eau à étages sculptée en terre cuite avec décors minutieux.",
+                p7Title: "Fontaine Murale en Argile",
+                p7Desc: "Fontaine décorative compacte idéale pour patios et intérieurs.",
+                p8Title: "Sculptures en Argile Naturelle",
+                p8Desc: "Formes authentiques en terre cuite brute mettant en valeur le travail manuel.",
+                contactTitle: "Une commande sur-mesure ou une demande de renseignements ?",
+                contactDesc: "Contactez directement Maâlem Abdelali sur WhatsApp pour toute commande personnalisée.",
+                btnWhatsapp: "Contacter sur WhatsApp",
+                bottomVideoTitle: "Vidéo au Cœur de l'Atelier Al Koutoubia",
+                footer: "Tous droits réservés © Poterie Al Koutoubia - Maâlem Abdelali El Kaddadri"
+            },
+            en: {
+                dir: 'ltr',
+                logo: "Koutoubia Pottery",
+                name: "Maâlem Abdelali El Kaddadri",
+                subtitle: "Koutoubia Pottery | Master Craftsman from the Renowned El Kaddadri Family in Salé",
+                bio: "Maâlem Abdelali El Kaddadri is an accomplished artisan in authentic Moroccan pottery and ceramics. Mastering his trade alongside his renowned brothers 'El Kaddadri' in the historic pottery hub of Salé, his skilled hands turn natural clay into architectural miniatures, handcrafted water fountains, and exquisite decorative artworks.",
+                videoTitle: "Pottery Crafting & Art Showcase Video",
+                galleryTitle: "Artisan Pottery & Sculptures Gallery",
+                p1Title: "Architectural Heritage Palace",
+                p1Desc: "Detailed clay model inspired by traditional Moroccan gates and kasbahs.",
+                p2Title: "Clay Lantern House",
+                p2Desc: "Decorative pottery lantern with star cutouts for an ambient warm glow.",
+                p3Title: "Hand-Carved Moroccan Babouche",
+                p3Desc: "A traditional handcrafted pottery slipper representing Moroccan heritage.",
+                p4Title: "Embossed Pottery Wall Reliefs",
+                p4Desc: "3D sculpted clay plaques crafted for authentic wall decor.",
+                p5Title: "Boat-Shaped Ceramic Vessels",
+                p5Desc: "Unique boat-form clay trays with vivid blue decorative strokes.",
+                p6Title: "Tiered Pottery Water Fountain",
+                p6Desc: "Handcrafted flowing waterfall fountain blending castle aesthetics with clay art.",
+                p7Title: "Wall-Mounted Artisan Fountain",
+                p7Desc: "Elegant compact water feature suitable for indoor spaces and gardens.",
+                p8Title: "Raw Natural Clay Artifacts",
+                p8Desc: "Clay pieces showcasing pristine hand-modeling before color glazing.",
+                contactTitle: "Interested in custom orders or inquiries?",
+                contactDesc: "Reach out directly to Maâlem Abdelali on WhatsApp for custom designs and orders.",
+                btnWhatsapp: "Chat on WhatsApp",
+                bottomVideoTitle: "Inside Koutoubia Pottery Workshop Video",
+                footer: "All rights reserved © Koutoubia Pottery - Maâlem Abdelali El Kaddadri"
+            }
+        };
+
+        function switchLanguage(lang) {
+            const data = translations[lang];
+            
+            document.documentElement.dir = data.dir;
+            document.documentElement.lang = lang;
+
+            document.getElementById('txt-logo').innerText = data.logo;
+            document.getElementById('txt-name').innerText = data.name;
+            document.getElementById('txt-subtitle').innerText = data.subtitle;
+            document.getElementById('txt-bio').innerText = data.bio;
+            document.getElementById('txt-video-title').innerText = data.videoTitle;
+            document.getElementById('txt-gallery-title').innerText = data.galleryTitle;
+            
+            document.getElementById('txt-p1-title').innerText = data.p1Title;
+            document.getElementById('txt-p1-desc').innerText = data.p1Desc;
+            document.getElementById('txt-p2-title').innerText = data.p2Title;
+            document.getElementById('txt-p2-desc').innerText = data.p2Desc;
+            document.getElementById('txt-p3-title').innerText = data.p3Title;
+            document.getElementById('txt-p3-desc').innerText = data.p3Desc;
+            document.getElementById('txt-p4-title').innerText = data.p4Title;
+            document.getElementById('txt-p4-desc').innerText = data.p4Desc;
+            document.getElementById('txt-p5-title').innerText = data.p5Title;
+            document.getElementById('txt-p5-desc').innerText = data.p5Desc;
+            document.getElementById('txt-p6-title').innerText = data.p6Title;
+            document.getElementById('txt-p6-desc').innerText = data.p6Desc;
+            document.getElementById('txt-p7-title').innerText = data.p7Title;
+            document.getElementById('txt-p7-desc').innerText = data.p7Desc;
+            document.getElementById('txt-p8-title').innerText = data.p8Title;
+            document.getElementById('txt-p8-desc').innerText = data.p8Desc;
+            
+            document.getElementById('txt-contact-title').innerText = data.contactTitle;
+            document.getElementById('txt-contact-desc').innerText = data.contactDesc;
+            document.getElementById('txt-btn-whatsapp').innerText = data.btnWhatsapp;
+            document.getElementById('txt-bottom-video-title').innerText = data.bottomVideoTitle;
+            document.getElementById('txt-footer').innerText = data.footer;
+
+            const buttons = document.querySelectorAll('.lang-switcher button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
